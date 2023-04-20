@@ -1,23 +1,17 @@
-#include "led.h"
+#include  "my_stm32f4_uart_lib.h"
 
-Led_Type led1;
-Led_Type led2;
+
+
 
 int main(void){
 
-  USART2_Init();
-	Led_ctor(&led1,RED,OFF);
-	Led_ctor(&led2,BLUE,ON);
-	
-//	Led_getState(&led1);
-//	Led_getState(&led2);
-//	
-//	Led_setState(&led1,ON);
-//	
-	
-	
-	
+   LIB_UART_Init(TX_ONLY,_115200);
+
+
 	while(1){
-	
+		
+   LIB_UART_Write('Y');
+
 	}
+   
 }
